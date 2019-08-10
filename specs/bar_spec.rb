@@ -9,7 +9,9 @@ require_relative('../song')
 class BarTest < MiniTest::Test
 
   def setup
-    @bar = Bar.new('Karaoke Kingdom', ['Pop Palace', 'Rock Dungeon'])
+    @room1 = Room.new('Pop Palace')
+    @room2 = Room.new('Rock Dungeon')
+    @bar = Bar.new('Karaoke Kingdom', [@room1, @room2])
     @guest1 = Guest.new('Steve')
     @bar.new_guest(@guest1)
   end
@@ -19,7 +21,7 @@ class BarTest < MiniTest::Test
   end
 
   def test_check_bar_has_room
-    assert_equal('Pop Palace', @bar.rooms()[0])
+    assert_equal('Pop Palace', @bar.rooms()[0].name())
   end
 
   def test_check_bar_has_guest
