@@ -10,6 +10,8 @@ class BarTest < MiniTest::Test
 
   def setup
     @bar = Bar.new('Karaoke Kingdom', ['Pop Palace', 'Rock Dungeon'])
+    @guest1 = Guest.new('Steve')
+    @bar.new_guest(@guest1)
   end
 
   def test_check_bar_has_name
