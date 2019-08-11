@@ -13,13 +13,13 @@ class GuestTest < MiniTest::Test
     assert_equal('Steve', @guest1.name())
   end
 
-  def test_guest_has_cash
-    assert_equal(30, @guest1.cash)
+  def test_guest_has_money
+    assert_equal(30, @guest1.money)
   end
 
   def test_guest_can_pay
     @guest1.pay(5)
-    assert_equal(25, @guest1.cash())
+    assert_equal(25, @guest1.money())
   end
 
 end

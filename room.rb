@@ -16,7 +16,7 @@ class Room
   end
 
   def check_in_guest(guest)
-    return if guest.cash() < @entry_fee
+    return if guest.money() < @entry_fee
     if @capacity > @guests.count()
       @guests << guest
     end
