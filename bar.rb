@@ -1,6 +1,6 @@
 class Bar
 
-  attr_reader :name, :rooms, :guests
+  attr_reader :name, :rooms
 
   def initialize(name, rooms)
     @name = name
@@ -8,8 +8,8 @@ class Bar
     @guests = []
   end
 
-  def new_guest(guest)
-    @guests << guest
+  def new_room(room)
+    @rooms << room
   end
 
 end
