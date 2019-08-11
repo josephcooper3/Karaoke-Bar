@@ -18,4 +18,10 @@ class Bar
     @money += amount
   end
 
+  def admit(guest, room)
+    return if guest.money() < room.entry_fee()
+    room.check_in_guest(guest)
+    charge(guest, room.entry_fee())
+  end
+
 end
