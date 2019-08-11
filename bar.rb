@@ -13,4 +13,9 @@ class Bar
     @rooms << room
   end
 
+  def charge(guest, amount)
+    guest.pay(amount)
+    @money += amount
+  end
+
 end

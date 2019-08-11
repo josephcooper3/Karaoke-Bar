@@ -4,6 +4,7 @@ require('minitest/rg')
 require_relative('../bar')
 require_relative('../room')
 require_relative('../song')
+require_relative('../guest')
 
 class BarTest < MiniTest::Test
 
@@ -11,6 +12,7 @@ class BarTest < MiniTest::Test
     @room1 = Room.new('Superstar Suite', 4, 5)
     @room2 = Room.new('Classics Castle', 8, 6)
     @bar = Bar.new('Karaoke Kingdom', [@room1], 1000)
+    @guest1 = Guest.new('Steve', 30)
   end
 
   def test_bar_has_name
@@ -28,6 +30,11 @@ class BarTest < MiniTest::Test
 
   def test_bar_has_money
     assert_equal(1000, @bar.money())
+  end
+
+  def test_bar_can_charge
+    @bar.charge(@guest1, 5)
+    assert_equal(1005, @bar.money())
   end
 
 end
